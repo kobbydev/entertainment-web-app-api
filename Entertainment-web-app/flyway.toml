@@ -1,0 +1,25 @@
+databaseType = "PostgreSql"
+name = "Entertainment-web-app"
+id = "8fa5c7db-986d-4e79-ac1f-0b94de0d69af"
+
+[flywayDesktop]
+developmentEnvironment = "development"
+shadowEnvironment = "shadow"
+schemaModel = "./schema-model"
+
+[redgateCompare]
+filterFile = "filter.rgf"
+
+[redgateCompare.postgres.options.ignores]
+ignoreNewlinesInTextObjects = "off"
+
+[flyway]
+mixed = true
+outOfOrder = true
+locations = [ "filesystem:migrations" ]
+validateMigrationNaming = true
+
+[environments.target1]
+url = "jdbc:postgresql://localhost:5432/entertainment-web-app"
+schemas = [ "public" ]
+displayName = "EWA"
